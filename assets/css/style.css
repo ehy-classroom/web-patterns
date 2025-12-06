@@ -8,6 +8,15 @@ RESET
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav ul {
+    list-style: none;
+}
+
 
 
 /*---------------------
@@ -17,6 +26,19 @@ LAYOUT
 h1, h2, h3, h4, h5, h6, p {
     margin-bottom: 1rem;
 }
+
+
+/*---------------------
+NAVIGATION
+----------------------*/
+
+
+.nav-bar>ul {
+    display: flex;
+    gap: 1rem;
+}
+
+nav.main-nav {}
 
 
 .container {
@@ -42,6 +64,29 @@ body {
     font-weight: 300;
     line-height: 1.44;
 }
+
+
+
+/*---------------------
+COLOR
+----------------------*/
+
+
+:root {
+    --color-grey-cool-base: 199;
+    --color-grey-cool-100: hsl(var(--color-grey-cool-base), 8%, 97%);
+    --color-grey-cool-200: hsl(var(--color-grey-cool-base), 13%, 89%);
+    --color-grey-cool-300: hsl(var(--color-grey-cool-base), 13%, 68%);
+    --color-grey-cool-400: hsl(var(--color-grey-cool-base), 21%, 55%); /* baseline */
+    --color-grey-cool-500: hsl(var(--color-grey-cool-base), 21%, 47%);
+    --color-grey-cool-600: hsl(var(--color-grey-cool-base), 34%, 34%);
+    --color-grey-cool-700: hsl(var(--color-grey-cool-base), 34%, 21%);
+}
+
+/**-----
+Color: Backgrounds
+-----**/
+
 
 
 

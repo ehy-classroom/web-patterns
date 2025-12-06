@@ -18,6 +18,11 @@ echo "🔍 Checking repository status..."
 git status
 
 echo ""
+echo "🔎 Working tree changes (pre-stage):"
+git status -sb
+git diff --stat
+
+echo ""
 read -p "➡️  Stage all changes? (y/n): " STAGE
 
 if [[ "$STAGE" == "y" || "$STAGE" == "Y" ]]; then
@@ -28,6 +33,13 @@ else
 fi
 
 echo ""
+echo "📦 Staged changes summary:"
+if git diff --cached --quiet --exit-code; then
+    echo "ℹ️  No staged changes."
+else
+    git diff --cached --stat
+fi
+
 read -p "➡️  Commit changes? (y/n): " COMMIT
 
 if [[ "$COMMIT" == "y" || "$COMMIT" == "Y" ]]; then
