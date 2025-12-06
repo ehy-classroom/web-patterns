@@ -1,0 +1,71 @@
+/*---------------------
+RESET
+----------------------*/
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/*---------------------
+LAYOUT
+----------------------*/
+
+h1, h2, h3, h4, h5, h6, p {
+    margin-bottom: 1rem;
+}
+
+
+.container {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/*---------------------
+TYPOGRAPHY
+----------------------*/
+
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+}
+@supports (font-variation-settings: normal) {
+  :root { font-family: InterVariable, sans-serif; }
+}
+
+body {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.44;
+}
+
+
+
+/*---------------------
+PATTERNS
+----------------------*/
+
+.tile {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.masonry-type-a {
+    column-count: 3;
+    column-gap: 1rem;
+}
+
+.masonry-type-a .tile {
+    display: inline-block;
+    width: 100%;
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+}

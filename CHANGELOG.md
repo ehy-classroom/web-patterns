@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.0.2] - 2025-12-06
+### Added
+- Masonry Type A demo section in `index.html` showing a multicolumn layout with varied tile lengths (no column breaks inside tiles).
+- `emmet-cheatsheet.md` for common Emmet abbreviations and VS Code wrap-with-abbreviation note (ignored from git).
+
 ## [v1.0.1] - 2025-12-06
 ### Added
 - Bilingual `README.md` outlining the educational, code-first UI pattern focus.
@@ -20,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Version tracking via `VERSION` file (current release: `v1.0.0`).
 - Starter `index.html` placeholder page.
 
-[Unreleased]: https://github.com/ehy-classroom/web-patterns/compare/v1.0.1...HEAD
+[Unreleased]: https://github.com/ehy-classroom/web-patterns/compare/v1.0.2...HEAD
+[v1.0.2]: https://github.com/ehy-classroom/web-patterns/compare/v1.0.1...v1.0.2
 [v1.0.1]: https://github.com/ehy-classroom/web-patterns/compare/v1.0.0...v1.0.1
 [v1.0.0]: https://github.com/ehy-classroom/web-patterns/releases/tag/v1.0.0

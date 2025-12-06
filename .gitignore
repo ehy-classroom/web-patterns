@@ -19,3 +19,4 @@ pnpm-debug.log*
 .env.*.local
 .vscode/
 .idea/
+emmet-cheatsheet.md

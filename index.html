@@ -1,11 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Web Patterns in Code und in Figma</title>
-    </head>
-    <body>
-        
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <title>Web Patterns in Code und in Figma</title>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Masonry Type A</h2>
+          <p>
+            Ein Masonry-Layout ist ein Rasterlayout, bei dem die Elemente in Spalten angeordnet sind, aber die Höhe der
+            Elemente variiert. Dies führt zu einem "mauerartigen" Erscheinungsbild, bei dem die Elemente eng aneinander
+            gereiht sind, ohne feste Reihenhöhen. Masonry-Layouts sind besonders nützlich für die Darstellung von
+            Inhalten mit unterschiedlichen Höhen, wie z.B. Bildergalerien, Blog-Posts oder Produktkataloge.
+          </p>
+          <p>
+            In diesem Beispiel entsteht das Masonry über das CSS-Multicolumn-Layout:
+            <code>.masonry-type-a</code> setzt <code>column-count</code> und <code>column-gap</code>, und jede
+            <code>.tile</code> ist ein <code>inline-block</code> mit <code>break-inside: avoid</code>, damit keine Kachel
+            innerhalb einer Spalte aufgebrochen wird.
+          </p>
+        </header>
+        <div class="pattern masonry-type-a">
+          <div class="tile">
+            <h3>Tile</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus eget sapien varius porttitor.
+              Curabitur auctor nisl sed leo bibendum, vel dictum lectus facilisis.
+            </p>
+          </div>
+          <div class="tile">
+            <h3>Tile</h3>
+            <p>
+              Phasellus tempus neque a turpis interdum, non laoreet quam convallis. Integer vel mauris ac purus lobortis
+              aliquet.
+            </p>
+          </div>
+          <div class="tile">
+            <h3>Tile</h3>
+            <p>
+              Mauris faucibus commodo ligula, vel congue massa facilisis in. Donec gravida, nibh vitae suscipit viverra,
+              velit lorem varius felis, et condimentum enim lectus id ipsum. Vivamus sodales, nunc sit amet mollis
+              fermentum, ex mi dapibus neque, at ultrices turpis ipsum vitae mi. Aenean consequat vehicula quam, nec
+              ultrices leo rhoncus nec. Nam non bibendum lacus; sed lacinia tellus sem in justo.
+            </p>
+          </div>
+          <div class="tile">
+            <h3>Tile</h3>
+            <p>
+              Etiam molestie eros sed massa gravida, et gravida velit interdum. Ut tincidunt turpis quis libero
+              dignissim volutpat.
+            </p>
+          </div>
+          <div class="tile">
+            <h3>Tile</h3>
+            <p>
+              Suspendisse potenti. Curabitur gravida mi sed nibh pulvinar, et hendrerit tortor tempor. Cras semper urna
+              ac nibh cursus, id facilisis lacus efficitur.
+            </p>
+          </div>
+          <div class="tile">
+            <h3>Tile</h3>
+            <p>
+              Aliquam erat volutpat. Vestibulum sodales pretium velit, sed luctus augue dignissim quis. Integer eu
+              interdum urna, at congue orci. Proin ac porttitor magna.
+            </p>
+          </div>
+          <div class="tile">
+            <h3>Tile</h3>
+            <p>
+              Ut sed lectus non nunc rutrum venenatis in quis velit. Nam finibus, massa sed pellentesque hendrerit,
+              justo mauris luctus velit, id dapibus justo dolor ac nisl. Pellentesque ultricies pharetra justo.
+            </p>
+          </div>
+          <div class="tile">
+            <h3>Tile</h3>
+            <p>Morbi ornare, ante a bibendum aliquet, libero ante luctus velit, ut tempor urna turpis vitae ipsum.</p>
+          </div>
+          <div class="tile">
+            <h3>Tile</h3>
+            <p>
+              Vivamus fermentum magna eget lacus pellentesque, in venenatis massa faucibus. Sed consequat justo in
+              lectus fringilla tincidunt. Pellentesque sed leo justo, sed gravida velit.
+            </p>
+          </div>
+          <div class="tile">
+            <h3>Tile</h3>
+            <p>Curabitur at dui lorem. Mauris non libero eget erat luctus pharetra vitae eget risus.</p>
+          </div>
+          <div class="tile">
+            <h3>Tile</h3>
+            <p>
+              Aenean nec magna ultrices, accumsan mi ac, tincidunt nisi. Sed sollicitudin, tortor non tincidunt
+              ultricies, neque risus dignissim erat, sit amet semper odio erat nec leo. Sed commodo ornare risus, ac
+              auctor lorem gravida a. Cras hendrerit semper sem eget mattis.
+            </p>
+          </div>
+          <div class="tile">
+            <h3>Tile</h3>
+            <p>Quisque elementum nisl vel ipsum dictum, vitae consequat mi cursus. Nulla facilisi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
