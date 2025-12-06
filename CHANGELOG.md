@@ -1,0 +1,25 @@
+# Changelog
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+
+## [v1.0.1] - 2025-12-06
+### Added
+- Bilingual `README.md` outlining the educational, code-first UI pattern focus.
+- Standard `.gitignore` for common web/node artifacts.
+- `CHANGELOG.md` scaffold following Keep a Changelog and SemVer.
+### Updated
+- `git-helper.sh`: added commit body note (“Refer to CHANGELOG.md for commit details”), upstream auto-detection, and auth checks to improve first-time and follow-up pushes.
+
+## [v1.0.0] - 2025-12-06
+### Added
+- Interactive `git-helper.sh` with staging/commit/push flow.
+- Version tracking via `VERSION` file (current release: `v1.0.0`).
+- Starter `index.html` placeholder page.
+
+[Unreleased]: https://github.com/ehy-classroom/web-patterns/compare/v1.0.1...HEAD
+[v1.0.1]: https://github.com/ehy-classroom/web-patterns/compare/v1.0.0...v1.0.1
+[v1.0.0]: https://github.com/ehy-classroom/web-patterns/releases/tag/v1.0.0
