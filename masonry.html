@@ -6,32 +6,21 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="preconnect" href="https://rsms.me/" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-    <title>Web Patterns | Masonry Layout</title>
+    <title>Web Patterns | Masonry 100</title>
   </head>
   <body>
-    <header class="main-header  header-page">
+    <header class="main-header header-page">
       <div class="container">
-        <h1>Design Patterns für Web und Web-App UI</h1>
+        <p class="page-title">Design Patterns für Web und Web-App UI</p>
+        <h1 class="page-title">Masonry Layouts</h1>
       </div>
     </header>
-    <nav class="main-nav nav-bar">
-      <ul class="container">
-        <li><a href="index.html">Startseite</a></li>
-        <li>
-          Layout Patterns
-          <ul>
-            <li><a href="masonry.html">Masonry Layout</a></li>
-            <li><a href="#">Item</a></li>
-            <li><a href="#">Item</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
+    <div template-main-nav></div>
     <main class="main-content">
       <section>
         <div class="container">
           <header class="section-header">
-            <h2 class="section-title">Masonry Type A</h2>
+            <h2>Was ist ein Masonry Layout?</h2>
             <p>
               Ein Masonry-Layout ist ein Rasterlayout, bei dem die Elemente in Spalten angeordnet sind, aber die Höhe
               der Elemente variiert. Dies führt zu einem "mauerartigen" Erscheinungsbild, bei dem die Elemente eng
@@ -40,22 +29,42 @@
               Produktkataloge.
             </p>
             <p>
-              In diesem Beispiel entsteht das Masonry über das CSS-Multicolumn-Layout:
-              <code>.masonry-type-a</code>
-              setzt
-              <code>column-count</code>
-              und
-              <code>column-gap</code>
-              , und jede
-              <code>.tile</code>
-              ist ein
-              <code>inline-block</code>
-              mit
-              <code>break-inside: avoid</code>
-              , damit keine Kachel innerhalb einer Spalte aufgebrochen wird.
+                Ein bekanntes Beispiel für ein Masonry-Layout ist die Pinterest-Website, die eine Vielzahl von Bildern und Inhalten in einem dynamischen Raster anzeigt.
             </p>
           </header>
-          <div class="pattern masonry-type-a">
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <header class="section-header">
+            <h2 class="section-title">Masonry 100</h2>
+
+            <p>
+              Masonry 100 nutzt ein CSS-Multicolumn-Layout: Das Wrapper-Element
+              <code>.masonry-100</code> legt Spaltenanzahl und Abstand fest, die Kacheln fließen von oben nach unten und
+              setzen sich dann rechts fort.
+            </p>
+            <p>
+              Jede <code>.tile</code> bleibt als Block zusammen, weil wir Spaltenumbrüche im Inneren verhindern. Markup:
+              ein Pattern-Wrapper mit wiederholten Tiles. CSS: Spaltensteuerung auf dem Wrapper, Break-Avoidance auf den
+              Tiles.
+            </p>
+            <pre class="code-block"><code>&lt;div class="pattern masonry-100"&gt;
+  &lt;div class="tile"&gt;...&lt;/div&gt;
+  &lt;div class="tile"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            <pre class="code-block"><code>.masonry-100 {
+  column-count: 3;
+  column-gap: 1rem;
+}
+
+.tile {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+}</code></pre>
+          </header>
+          <div class="pattern masonry-100">
             <div class="tile">
               <h3>Tile</h3>
               <p>
@@ -138,10 +147,7 @@
         </div>
       </section>
     </main>
-    <footer class="main-footer">
-      <div class="container">
-        <p class="copyright">© 2025 - 2026 Enno Hyttrek</p>
-      </div>
-    </footer>
+    <div template-main-footer></div>
+    <script src="assets/js/templates.js" type="module"></script>
   </body>
 </html>
