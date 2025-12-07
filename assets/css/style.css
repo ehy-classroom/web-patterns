@@ -100,29 +100,28 @@ nav.main-nav {
   z-index: 1000;
 }
 
-nav.nav-bar.pull-down {
-}
-
 .nav-bar {
   background-color: var(--color-nav-bg);
 }
 
 .nav-bar.pull-down li {
   position: relative;
+    font-weight: 500;
+}
+
+.nav-bar.pull-down li:hover {
+    cursor: default;
 }
 
 .nav-bar.pull-down a {
   display: block;
-  padding: 0.5rem 0.25rem;
-  font-weight: 500;
-  color: var(--color-nav-link);
 }
 
 .nav-bar.pull-down li > ul {
   position: absolute;
   left: 0;
   top: 100%;
-  min-width: 12rem;
+  min-width: 10rem;
   padding: 0.5rem 0;
   background: var(--color-nav-submenu-bg);
   border: 1px solid var(--color-nav-submenu-border);
@@ -133,7 +132,6 @@ nav.nav-bar.pull-down {
 
 .nav-bar.pull-down li > ul li a {
   padding: 0.4rem 0.75rem;
-  color: var(--color-nav-link);
 }
 
 .nav-bar.pull-down li > ul li a:hover,
@@ -246,6 +244,9 @@ Color: Type
   color: var(--color-code-type);
 }
 
+a:hover {
+  color: var(--color-accent-400);
+}
 /**-----
 Color: Borders
 -----**/

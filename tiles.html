@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (() => {
+        const repo = "web-patterns";
+        const parts = window.location.pathname.split("/").filter(Boolean);
+        const isPages = window.location.hostname.endsWith("github.io") || parts[0] === repo;
+        const href = isPages ? `/${repo}/` : "/";
+        const baseEl = document.createElement("base");
+        baseEl.href = href;
+        document.head.appendChild(baseEl);
+      })();
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <title>Web Patterns | Tiles</title>
+  </head>
+  <body>
+    <header class="main-header header-page">
+      <div class="container">
+        <p class="site-title">Design Patterns für Web und Web-App UI</p>
+        <div class="lang-switch">
+          <a href="#" data-lang-switch="en" data-lang-label="EN" aria-label="Switch to English">English Version</a>
+          <a href="#" data-lang-switch="de" data-lang-label="DE" aria-label="Switch to German">Deutsche Version</a>
+        </div>
+        <h1
+          class="page-title"
+          data-md-title-src-de="content/tiles-de.md"
+          data-md-title-src-en="content/tiles-en.md"
+        >
+          [.md H1 goes here]
+        </h1>
+      </div>
+    </header>
+    <div template-part-main-nav></div>
+    <main class="main-content">
+      <div
+        id="md-content"
+        class="markdown"
+        data-md-src-de="content/tiles-de.md"
+        data-md-src-en="content/tiles-en.md"
+      ></div>
+    </main>
+    <div template-part-main-footer></div>
+    <script src="assets/js/settings.js"></script>
+    <script src="assets/js/template-parts.js" type="module"></script>
+    <script src="assets/js/cms.js"></script>
+  </body>
+</html>

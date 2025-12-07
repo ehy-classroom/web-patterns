@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.0.7] - 2025-12-06
+### Added
+- Lightweight CMS-style rendering: `assets/js/cms.js` fetches markdown, renders H1 into the page title, and converts H2+ content into section blocks under `<main>`.
+- Bilingual content loading with language-specific markdown (`content/tiles-en.md`, `content/tiles-de.md`) and a toggle (EN/DE) that switches sources and updates `<html lang>`.
+- Default language set to German; language toggle labeled “English Version” / “Deutsche Version”.
+### Updated
+- Markdown renderer now preserves mounts and rerenders on language switch; minor fixes to ensure template parts and markdown sources resolve correctly.
+
 ## [v1.0.6] - 2025-12-06
 ### Added
 - Dynamic `<base>` setup in page heads for correct paths locally and on GitHub Pages.
@@ -59,7 +67,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Version tracking via `VERSION` file (current release: `v1.0.0`).
 - Starter `index.html` placeholder page.
 
-[Unreleased]: https://github.com/ehy-classroom/web-patterns/compare/v1.0.5...HEAD
+[Unreleased]: https://github.com/ehy-classroom/web-patterns/compare/v1.0.7...HEAD
+[v1.0.7]: https://github.com/ehy-classroom/web-patterns/compare/v1.0.6...v1.0.7
 [v1.0.5]: https://github.com/ehy-classroom/web-patterns/compare/v1.0.4...v1.0.5
 [v1.0.4]: https://github.com/ehy-classroom/web-patterns/compare/v1.0.3...v1.0.4
 [v1.0.3]: https://github.com/ehy-classroom/web-patterns/compare/v1.0.2...v1.0.3
