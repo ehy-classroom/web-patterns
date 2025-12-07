@@ -24,6 +24,12 @@ async function loadNav() {
 // Footer template-part
 async function loadFooter() {
   await injectTemplate('[template-part-main-footer]', FOOTER_TEMPLATE_PATH);
+  if (window.updateCopyright) {
+    window.updateCopyright();
+  }
+  if (window.updateVersion) {
+    window.updateVersion();
+  }
 }
 
 loadNav().catch((err) => console.error('Error loading nav template-part', err));

@@ -6,16 +6,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.0.6] - 2025-12-06
+### Added
+- Dynamic `<base>` setup in page heads for correct paths locally and on GitHub Pages.
+- Dynamic footer version display and copyright year range.
+### Updated
+- Template loader now uses the renamed `template-parts.js`; nav/footer links and mounts updated to work with the new base handling.
+
 ## [v1.0.5] - 2025-12-06
 ### Added
 - New template-part directory (`templates-parts/`) with nav/footer partials, plus a copy/paste page scaffold (`templates/page-100.html`).
 - Initial pattern tile snippets (`patterns/tile-100.html`, `patterns/tile-200.html`) and sample image assets under `assets/img/`.
+- Base-path helper (`~/` prefix) for local vs GitHub Pages paths, plus dynamic version display in the footer.
 ### Updated
 - Template loader now targets `template-part-*` mounts and the renamed template-part paths; nav/footer mounts in pages adjusted accordingly. Minor heading class tweak in `masonry.html` (site title).
 
 ## [v1.0.4] - 2025-12-06
 ### Added
-- Client-side “AJAX-style” template system: `assets/js/templates.js` fetches and injects shared HTML partials (`templates/main-nav.html`, `templates/main-footer.html`) into pages at runtime.
+- Client-side “AJAX-style” template system: `assets/js/template-parts.js` fetches and injects shared HTML partials (`templates-parts/main-nav.html`, `templates-parts/main-footer.html`) into pages at runtime.
 - Pattern code block styling for inline code samples in sections (monospace, bordered, scrollable).
 - Clarified Masonry 100 documentation with descriptive text and code examples (markup + CSS) in `masonry.html`.
 - Expanded color system with sub-white/black tokens, accents, and code-specific colors.

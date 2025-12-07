@@ -3,6 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (() => {
+        const repo = 'web-patterns';
+        const parts = window.location.pathname.split('/').filter(Boolean);
+        const isPages = window.location.hostname.endsWith('github.io') || parts[0] === repo;
+        const href = isPages ? `/${repo}/` : '/';
+        const baseEl = document.createElement('base');
+        baseEl.href = href;
+        document.head.appendChild(baseEl);
+      })();
+    </script>
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="preconnect" href="https://rsms.me/" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
@@ -15,7 +26,7 @@
         <h1 class="page-title">Page Title</h1>
       </div>
     </header>
-    <div template-main-nav></div>
+    <div template-part-main-nav></div>
     <main class="main-content">
       <section>
         <div class="container">
@@ -28,7 +39,8 @@
         </div>
       </section>
     </main>
-    <div template-main-footer></div>
-    <script src="assets/js/templates.js" type="module"></script>
+    <div template-part-main-footer></div>
+    <script src="assets/js/settings.js"></script>
+    <script src="assets/js/template-parts.js" type="module"></script>
   </body>
 </html>
