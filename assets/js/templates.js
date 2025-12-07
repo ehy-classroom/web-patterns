@@ -1,14 +1,14 @@
-const NAV_TEMPLATE_PATH = 'templates/main-nav.html';
-const FOOTER_TEMPLATE_PATH = 'templates/main-footer.html';
+const NAV_TEMPLATE_PATH = 'templates-parts/main-nav.html';
+const FOOTER_TEMPLATE_PATH = 'templates-parts/main-footer.html';
 
-// Shared helper: fetch a template file and replace the mount with its markup.
+// Shared helper: fetch a template-part file and replace the mount with its markup.
 async function injectTemplate(selector, templatePath) {
   const mount = document.querySelector(selector);
   if (!mount) return;
 
   const response = await fetch(templatePath, { cache: 'no-cache' });
   if (!response.ok) {
-    console.error(`Failed to load template (${templatePath}): ${response.status} ${response.statusText}`);
+    console.error(`Failed to load template-part (${templatePath}): ${response.status} ${response.statusText}`);
     return;
   }
 
@@ -16,15 +16,15 @@ async function injectTemplate(selector, templatePath) {
   mount.outerHTML = markup;
 }
 
-// Navigation template
+// Navigation template-part
 async function loadNav() {
-  await injectTemplate('[template-main-nav]', NAV_TEMPLATE_PATH);
+  await injectTemplate('[template-part-main-nav]', NAV_TEMPLATE_PATH);
 }
 
-// Footer template
+// Footer template-part
 async function loadFooter() {
-  await injectTemplate('[template-main-footer]', FOOTER_TEMPLATE_PATH);
+  await injectTemplate('[template-part-main-footer]', FOOTER_TEMPLATE_PATH);
 }
 
-loadNav().catch((err) => console.error('Error loading nav template', err));
-loadFooter().catch((err) => console.error('Error loading footer template', err));
+loadNav().catch((err) => console.error('Error loading nav template-part', err));
+loadFooter().catch((err) => console.error('Error loading footer template-part', err));

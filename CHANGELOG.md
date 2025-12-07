@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.0.5] - 2025-12-06
+### Added
+- New template-part directory (`templates-parts/`) with nav/footer partials, plus a copy/paste page scaffold (`templates/page-100.html`).
+- Initial pattern tile snippets (`patterns/tile-100.html`, `patterns/tile-200.html`) and sample image assets under `assets/img/`.
+### Updated
+- Template loader now targets `template-part-*` mounts and the renamed template-part paths; nav/footer mounts in pages adjusted accordingly. Minor heading class tweak in `masonry.html` (site title).
+
 ## [v1.0.4] - 2025-12-06
 ### Added
 - Client-side “AJAX-style” template system: `assets/js/templates.js` fetches and injects shared HTML partials (`templates/main-nav.html`, `templates/main-footer.html`) into pages at runtime.
@@ -44,7 +51,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Version tracking via `VERSION` file (current release: `v1.0.0`).
 - Starter `index.html` placeholder page.
 
-[Unreleased]: https://github.com/ehy-classroom/web-patterns/compare/v1.0.4...HEAD
+[Unreleased]: https://github.com/ehy-classroom/web-patterns/compare/v1.0.5...HEAD
+[v1.0.5]: https://github.com/ehy-classroom/web-patterns/compare/v1.0.4...v1.0.5
 [v1.0.4]: https://github.com/ehy-classroom/web-patterns/compare/v1.0.3...v1.0.4
 [v1.0.3]: https://github.com/ehy-classroom/web-patterns/compare/v1.0.2...v1.0.3
 [v1.0.2]: https://github.com/ehy-classroom/web-patterns/compare/v1.0.1...v1.0.2

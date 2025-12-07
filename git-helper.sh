@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export GIT_PAGER=cat
+
 VERSION_FILE="VERSION"
 
 if [[ ! -f "$VERSION_FILE" ]]; then
@@ -15,15 +17,16 @@ echo "📄 Version file detected: $VERSION_MSG"
 
 echo ""
 echo "🔍 Checking repository status..."
-git status
+git --no-pager status
 
 echo ""
 echo "🔎 Working tree changes (pre-stage):"
-git status -sb
-git diff --stat
+git --no-pager status -sb
+git --no-pager diff --stat
 
 echo ""
-read -p "➡️  Stage all changes? (y/n): " STAGE
+printf "➡️  Stage all changes? (y/n): "
+read -r STAGE
 
 if [[ "$STAGE" == "y" || "$STAGE" == "Y" ]]; then
     git add .
@@ -37,20 +40,23 @@ echo "📦 Staged changes summary:"
 if git diff --cached --quiet --exit-code; then
     echo "ℹ️  No staged changes."
 else
-    git diff --cached --stat
+    git --no-pager diff --cached --stat
 fi
 
-read -p "➡️  Commit changes? (y/n): " COMMIT
+printf "➡️  Commit changes? (y/n): "
+read -r COMMIT
 
 if [[ "$COMMIT" == "y" || "$COMMIT" == "Y" ]]; then
 
     echo ""
-    read -p "📝 Use version file commit message '$VERSION_MSG'? (y/n): " USE_VERSION
+    printf "📝 Use version file commit message '$VERSION_MSG'? (y/n): "
+    read -r USE_VERSION
 
     if [[ "$USE_VERSION" == "y" || "$USE_VERSION" == "Y" ]]; then
         MSG="$VERSION_MSG"
     else
-        read -p "📝 Enter manual commit message: " MSG
+        printf "📝 Enter manual commit message: "
+        read -r MSG
     fi
 
     COMMIT_NOTE="Refer to CHANGELOG.md for commit details"
@@ -61,7 +67,8 @@ else
 fi
 
 echo ""
-read -p "➡️  Push to remote? (y/n): " PUSH
+printf "➡️  Push to remote? (y/n): "
+read -r PUSH
 
 if [[ "$PUSH" == "y" || "$PUSH" == "Y" ]]; then
     CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
