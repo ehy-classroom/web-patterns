@@ -111,31 +111,62 @@
     }
   }
 
+  function deriveSlug() {
+    const path = window.location.pathname;
+    const file = path.split("/").filter(Boolean).pop() || "index.html";
+    return file.replace(/\.html$/i, "");
+  }
+
+  function resolveSrc(el, datasetKey, langCode, slug) {
+    // Prefer explicit language-specific attribute; otherwise derive from the page slug
+    return el.dataset[datasetKey] || `content/${slug}-${langCode}.md`;
+  }
+
   // Init: fetch title and content separately where specified
   function init() {
     const setLanguage = (lang) => {
       const keySuffix = lang ? lang.trim().toLowerCase() : "";
       if (!keySuffix) return;
       document.documentElement.lang = keySuffix;
-      const titleKey = `mdTitleSrc${keySuffix[0].toUpperCase()}${keySuffix.slice(1)}`;
-      const contentKey = `mdSrc${keySuffix[0].toUpperCase()}${keySuffix.slice(1)}`;
+      const langKey = keySuffix[0].toUpperCase() + keySuffix.slice(1);
+      const titleKey = `mdTitleSrc${langKey}`;
+      const contentKey = `mdSrc${langKey}`;
+      const slug = deriveSlug();
 
-    document.querySelectorAll("[data-md-title-src],[data-md-title-src-en],[data-md-title-src-de]").forEach((el) => {
-      const src = el.dataset[titleKey];
-      if (src) renderTitle(el, src);
-    });
+      document
+        .querySelectorAll("[data-md-title-src],[data-md-title-src-en],[data-md-title-src-de]")
+        .forEach((el) => {
+          const src = resolveSrc(el, titleKey, keySuffix, slug);
+          renderTitle(el, src);
+        });
 
-    document.querySelectorAll("[data-md-src],[data-md-src-en],[data-md-src-de]").forEach((el) => {
-      const src = el.dataset[contentKey];
-      if (src) renderMarkdown(el, src);
-    });
-  };
+      document.querySelectorAll("[data-md-src],[data-md-src-en],[data-md-src-de]").forEach((el) => {
+        const src = resolveSrc(el, contentKey, keySuffix, slug);
+        renderMarkdown(el, src);
+      });
+    };
 
     const toggleLabels = (activeLang) => {
       const links = document.querySelectorAll("[data-lang-switch]");
+      const currentLabels = document.querySelectorAll("[data-lang-current]");
+      const hasCurrentLabels = currentLabels.length > 0;
+
       links.forEach((link) => {
         const lang = link.dataset.langSwitch;
-        link.style.display = lang === activeLang ? "none" : "inline";
+        link.hidden = lang === activeLang;
+      });
+
+      if (!hasCurrentLabels) return;
+
+      currentLabels.forEach((label) => {
+        const lang = label.dataset.langCurrent;
+        const isActive = lang === activeLang;
+        label.hidden = !isActive;
+        if (isActive) {
+          label.setAttribute("aria-current", "true");
+        } else {
+          label.removeAttribute("aria-current");
+        }
       });
     };
 

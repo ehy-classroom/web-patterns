@@ -15,6 +15,7 @@
       })();
     </script>
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/icons/fontawesome-free-7.1.0-web/css/all.min.css" />
     <link rel="preconnect" href="https://rsms.me/" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <title>Web Patterns</title>
@@ -25,7 +26,13 @@
         <h1 class="page-title">Design Patterns für Web und Web-App UI</h1>
       </div>
     </header>
-    <div template-part-main-nav></div>
+    <nav class="main-nav overlay-menu">
+      <button class="burger-icon" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="overlay-menu-list">
+        ☰
+      </button>
+      <div id="overlay-menu-list" template-part-main-nav></div>
+    </nav>
+    <nav class="main-nav nav-bar pull-down" template-part-main-nav></nav>
     <main class="main-content">
       <section>
         <div class="container">

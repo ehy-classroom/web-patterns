@@ -73,9 +73,14 @@ p {
 
 .main-header {
   min-height: 10rem;
+    position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 main {
+  padding-top: 13rem;
   min-height: 150vh;
 }
 
@@ -83,21 +88,122 @@ main {
   min-height: 20vh;
 }
 
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
 /*---------------------
 NAVIGATION
 ----------------------*/
 
+
+/**-----
+Navigation: Overlay Menu
+Used for primary navigation on mobile screens
+-----**/
+
+nav.main-nav.overlay-menu {
+  background-color: var(--color-nav-bg);
+}
+
+.burger-icon {
+  position: relative;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin: 0.5rem 1rem;
+  border: 1px solid var(--color-nav-submenu-border);
+  border-radius: var(--layout-radius-200);
+  background: transparent;
+  color: var(--color-nav-link);
+  font-size: 0;
+  cursor: pointer;
+}
+
+.burger-icon::before,
+.burger-icon::after {
+  content: "";
+  position: absolute;
+  left: 0.65rem;
+  right: 0.65rem;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+}
+
+.burger-icon::before {
+  top: 0.85rem;
+  box-shadow: 0 0.5rem 0 currentColor;
+}
+
+.burger-icon::after {
+  top: 1.85rem;
+}
+
+.burger-icon:focus-visible {
+  outline: 2px solid var(--color-accent-400);
+  outline-offset: 2px;
+}
+
+.main-nav.overlay-menu #overlay-menu-list {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  display: none;
+  background: var(--color-nav-submenu-bg);
+  border-top: 1px solid var(--color-nav-submenu-border);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.main-nav.overlay-menu.is-open #overlay-menu-list {
+  display: block;
+}
+
+.main-nav.overlay-menu #overlay-menu-list a {
+  display: block;
+  color: var(--color-nav-link);
+}
+
+.main-nav.overlay-menu #overlay-menu-list > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.main-nav.overlay-menu #overlay-menu-list li {
+  font-weight: 500;
+}
+
+.main-nav.overlay-menu #overlay-menu-list li > ul {
+  margin-left: 1rem;
+  padding-left: 0.75rem;
+  border-left: 1px solid var(--color-nav-submenu-border);
+}
+/**-----
+Navigation: Nav Bar
+Used for primary navigation on larger screens
+-----**/
+
 .nav-bar > ul {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
   align-items: center;
 }
 
 nav.main-nav {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
+
+}
+
+.main-nav.nav-bar {
+  display: none;
+}
+
+.main-nav.overlay-menu {
+  display: block;
 }
 
 .nav-bar {
@@ -106,11 +212,11 @@ nav.main-nav {
 
 .nav-bar.pull-down li {
   position: relative;
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .nav-bar.pull-down li:hover {
-    cursor: default;
+  cursor: default;
 }
 
 .nav-bar.pull-down a {
@@ -143,6 +249,16 @@ nav.main-nav {
 .nav-bar.pull-down li:focus-within > ul {
   display: block;
 }
+
+
+/**-----
+Navigation: Language Toggle
+-----**/
+
+.lang-switch [aria-current="true"] {
+  font-weight: 700;
+}
+
 
 /*---------------------
 TYPOGRAPHY
@@ -259,6 +375,8 @@ Color: Borders
 PATTERNS
 ----------------------*/
 
+
+
 /**-----
 Pattern: Tile
 Atomic Design Level: Molecule
@@ -278,7 +396,7 @@ Atomic Design Level: Molecule
 -----**/
 .code-block {
   padding: 1rem;
-    border-radius: var(--layout-radius-200);
+  border-radius: var(--layout-radius-200);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 0.95rem;
   line-height: 1.5;
@@ -309,6 +427,13 @@ RESPONSIVE DESIGN
 ----------------------*/
 
 @media (min-width: 580px) {
+  .main-nav.nav-bar {
+    display: block;
+  }
+
+  .main-nav.overlay-menu {
+    display: none;
+  }
 }
 
 @media (min-width: 45rem) {

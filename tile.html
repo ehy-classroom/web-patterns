@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (() => {
+        const repo = "web-patterns";
+        const parts = window.location.pathname.split("/").filter(Boolean);
+        const isPages = window.location.hostname.endsWith("github.io") || parts[0] === repo;
+        const href = isPages ? `/${repo}/` : "/";
+        const baseEl = document.createElement("base");
+        baseEl.href = href;
+        document.head.appendChild(baseEl);
+      })();
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/icons/fontawesome-free-7.1.0-web/css/all.min.css" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <title>Web Patterns | Tiles</title>
+  </head>
+  <body>
+    <header class="main-header header-page">
+      <div class="container">
+        <div class="row">
+        <p class="site-title">Design Patterns für Web und Web-App UI</p>
+        <p class="lang-switch">
+          <a href="#" data-lang-switch="en" data-lang-label="EN" aria-label="Switch to English">EN</a>
+          <span data-lang-current="en" hidden>EN</span>
+          <span aria-hidden="true"> | </span>
+          <a href="#" data-lang-switch="de" data-lang-label="DE" aria-label="Switch to German" hidden>DE</a>
+          <span data-lang-current="de" aria-current="true">DE</span>
+        </p>
+        </div>
+        <h1 class="page-title" data-md-title-src="">[.md H1 goes here]</h1>
+      </div>
+          <nav class="main-nav overlay-menu">
+      <button class="burger-icon" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="overlay-menu-list">
+        ☰
+      </button>
+      <div id="overlay-menu-list" template-part-main-nav></div>
+    </nav>
+    <nav class="main-nav nav-bar pull-down" template-part-main-nav></nav>
+    </header>
+
+
+
+    
+
+    <main class="main-content">
+      <div id="md-content" class="markdown" data-md-src=""></div>
+    </main>
+
+    <div template-part-main-footer></div>
+
+    <script src="assets/js/settings.js"></script>
+    <script src="assets/js/template-parts.js" type="module"></script>
+    <script src="assets/js/cms.js"></script>
+  </body>
+</html>

@@ -4,7 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [v1.0.8] - 2025-12-20
+### Added
+- Mobile overlay navigation container with burger toggle, alongside the existing desktop nav bar.
+- Footer social links row (LinkedIn/Instagram/Behance) using the local Font Awesome bundle.
+### Updated
+- `templates-parts/main-nav.html` now exports the `<ul>` as the root element; pages provide the `<nav>` wrapper(s).
+- Template injection supports multiple mounts and fills the mount contents for nav (so wrappers like the overlay burger button remain intact).
+- Language switch can render as `EN | DE` with the active language shown as plain text (bold via `[aria-current="true"]`).
 
 ## [v1.0.7] - 2025-12-06
 ### Added
@@ -67,7 +74,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Version tracking via `VERSION` file (current release: `v1.0.0`).
 - Starter `index.html` placeholder page.
 
-[Unreleased]: https://github.com/ehy-classroom/web-patterns/compare/v1.0.7...HEAD
+[v1.0.8]: https://github.com/ehy-classroom/web-patterns/compare/v1.0.7...v1.0.8
 [v1.0.7]: https://github.com/ehy-classroom/web-patterns/compare/v1.0.6...v1.0.7
 [v1.0.5]: https://github.com/ehy-classroom/web-patterns/compare/v1.0.4...v1.0.5
 [v1.0.4]: https://github.com/ehy-classroom/web-patterns/compare/v1.0.3...v1.0.4
